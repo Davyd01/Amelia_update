@@ -43,6 +43,8 @@ h1 {
 }
 
 
+
+
 .title-flex {
     display: flex;
     align-items: center;
@@ -64,7 +66,7 @@ h1 {
     margin-bottom: 40px;
 }
 .button-flex button{
-    padding: 20px 31px 19px;
+    /* padding: 20px 31px 19px; */
     /* background: #000; */
     border: 1px solid #81A36B;
 }
@@ -247,11 +249,19 @@ h1 {
         font-size: 16px;
     }
     .button-flex .back {
-        max-width: 130px;
+        /* max-width: 130px; */
+        padding: 13px 20px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
     }
     .button-flex button{
         /* background: #000; */
-        max-width: 130px;
+        /* max-width: 130px; */
+        padding: 13px 20px;
+        font-size: 14px;
+        width: 100%;
+        margin: 15px 0 0 5px;
     }
     .title-img img{
         width: 100%;
@@ -305,25 +315,8 @@ h1 {
         gap: 15px;
     }
     
-    .button-flex .back {
-        /* max-width: 90px; */
-        font-size: 12px;
-        padding: 10px 10px 10px;
-        
-        /* max-width: 50px; */
-        /* display: none; */
-        /* color: transparent;
-        background: transparent;
-        border: transparent; */
-    }
     
-    .button-flex button{
-        /* max-width: 90px; */
-        font-size: 14px;
-        padding: 5px 5px 5px;
-        /* display: none; */
-        /* position: relative; */
-    }
+    
     
     .button-flex button + button {
         margin-left: 5px;
@@ -381,7 +374,7 @@ h1 {
     .head-flex {
         display: none;
     }
-    .head::before {
+    /* .head::before {
         position: absolute;
         content: '';
         top: -12px;
@@ -401,9 +394,53 @@ h1 {
         height: 2px;
         background: #161616;
         /* border-bottom: 3px solid white; */
+    /* } */
+    .flex-container {
+        position: relative;
     }
+    .header__burger {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        border: none;
+        outline: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+
+    .header__burger span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 18px;
+        height: 14px;
+        /* background: #161616; */
+        border-top: 2px solid #161616;
+        border-bottom: 2px solid #161616;
+        }
+        .header__burger span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 100%;
+            left: 0;
+            transform: translateY(-50%);
+            background: #161616;
+        }
+
     .description p {
         font-size: 12px;
+    }
+    .title-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
     .title-img img{
         width: 100%;
@@ -420,6 +457,11 @@ h1 {
         margin-top: 120px;
         padding: 30px 0;
     }
+    .commerce-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
     .commerce-about p {
         font-size: 12px;
     }
@@ -429,17 +471,18 @@ h1 {
     .how-we-work-text p {
         font-size: 12px;
     }
+    .how-we-work-img img {
+        max-width: 100%;
+        max-height: 100%;
+    }
     .our_bouquets {
         text-align: center;
         /* display: flex;
         flex-direction: column; */
     }
     .bouquets {
-        flex: 1 1 45%;
-    }
-    .bouquets:last-child {
-        display: flex;
-        justify-content: center;
+        flex: 0 0 50%;
+        /* display: inline-block; */
     }
     .our_bouquets h2 {
         font-size: 24px;
@@ -447,6 +490,7 @@ h1 {
     .bouquets-flex {
         gap: 15px;
         flex: 1 1 50%;
+        justify-content: center;
         flex-wrap: wrap;
     }
     /* .bouquets {
@@ -460,5 +504,36 @@ h1 {
     }
     .footer-flex h3 {
         font-size: 18px;
+    }
+    .footer-flex {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-logo {
+        order: 1;
+        margin-bottom: 25px;
+    }
+    .footer-social {
+        order: 3;
+    }
+    .footer-contacts {
+        order: 2;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bouquets {
+        display: flex;
+        max-width: 100%;
+        /* display: inline-block; */
+        flex: 1 1 100%;
+    }
+    .bouquet {
+        /* max-width: 100%; */
+        /* display: inline-block; */
+        flex: 1 1 100%;
     }
 }
